@@ -1,123 +1,191 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/*Main Colour #087f5b
+Grey Colour: #343a40
+*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* ------------------------ */
+/* GENERAL STYLES */
+/* ------------------------ */
 body {
-  font-family: sans-serif;
-  margin-top: 50px;
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  border-bottom: 8px solid #087f5b;
 }
+
 .container {
   width: 960px;
   margin: 0 auto;
 }
-header {
-  display: grid;
-  margin: 40px 0 40px 0;
-  grid-template-columns: 440px 1fr;
-  column-gap: 80px;
-  align-items: center;
-}
+
 header,
 section {
   margin-bottom: 48px;
 }
-h1 {
-  display: block;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
+
 h2 {
   margin-bottom: 48px;
-  font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-h3 {
-  display: block;
-  font-size: 1.17em;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-  margin-bottom: 24px;
-}
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-.header-text {
-  margin-bottom: 24px;
+  font-size: 36px;
+  letter-spacing: -0.5px;
 }
 
 .grid-3-cols {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 80px;
 }
-.features-title {
-  margin-bottom: 16px;
-  font-weight: bold;
+
+.btn:link,
+btn:visited {
+  background-color: #087f5b;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-weight: 500;
+
+  display: inline-block;
 }
-.testimonial-box {
-  grid-column: 2/-1;
+
+.btn:hover,
+btn:active {
+  background-color: #099268;
+}
+
+.btn--small {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+.btn--big {
+  font-size: 18px;
+  padding: 16px 32px;
+}
+
+/* ------------------------ */
+/* COMPONENT STYLES */
+/* ------------------------ */
+
+/* HEADER */
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
+  margin-top: 48px;
+}
+
+.header-text-box {
   align-self: center;
 }
-.testimonial-text {
+
+h1 {
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -1px;
   margin-bottom: 24px;
+}
+
+.header-text {
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 img {
   width: 100%;
 }
 
+/* FEATURES */
+.feature-icon {
+  stroke: #087f5b;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 16px;
+}
+
+.features-title {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.features-text {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* TESTIMONIAL */
+.testimonial-section {
+  background-color: #087f5b;
+  color: #fff;
+  padding: 24px;
+}
+
+.testimonial-box {
+  grid-column: 2 / -1;
+  align-self: center;
+}
+
+.testimonial-box h2 {
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* CHAIRS */
 .chair-box {
   padding: 24px;
 }
-.chairs-details {
+
+h3 {
   margin-bottom: 24px;
-  list-style: none;
+  font-size: 20px;
 }
-.chairs-details li {
+
+.chair-details {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.chair-details li {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
 }
-li {
-  text-align: -webkit-match-parent;
-}
-figure {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 40px;
-  margin-inline-end: 40px;
-}
-.chair {
-  margin: 0;
-}
-.chair-price {
-  display: flex;
-  justify-content: space-between;
-}
+
 .chair-details li:last-child {
   margin-bottom: 0;
 }
 
-footer {
+.chair-icon {
+  stroke: #087f5b;
+  width: 24px;
+  height: 24px;
+}
+
+.chair-price {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+footer {
+  margin-bottom: 48px;
+  font-size: 14px;
+  color: #495057;
 }
